@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>RPF</title>
+  <meta name="description" content="PiggyPiglet">
+  <meta name="author" content="PiggyPiglet">
+  <meta name="keywords" content="java, reflection, rpf, reflection project framework, framework, spigot, bukkit, velocity, velocitypowered, sponge, spongepowered, paper, papermc, paperspigot, spigotmc, craftbukkit, jda, discord, ">
+  <meta name="theme-color" content="#252830">
+  <meta property="og:title" content="PiggyPiglet">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://piggypiglet.me">
+  <meta property="og:image" content="https://piggypiglet.me/includes/img/favicon.png">
+  <meta property="og:description" content="PiggyPiglet">
+  <link rel="icon" href="includes/img/favicon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="includes/css/code-theme.css">
+  <link rel="stylesheet" href="includes/css/main.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+      <a href="#" class="navbar-brand"><img src="includes/img/favicon.png" width="50" height="50"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://piggypiglet.me/discord" class="nav-link">Discord</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="docs" role="button" data-toggle="dropdown">Docs</a>
+            <div class="dropdown-menu">
+              <a href="https://github.com/PiggyPiglet/Framework/wiki" class="dropdown-item">Wiki</a>
+              <a href="https://rpf.piggypiglet.me/docs" class="dropdown-item">Javadocs</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-sm-12 col-md-8">
+          <div class="jumbotron jumbotron-fluid jumbotron-custom">
+            <div class="container">
+              <h1>Reflection Project Framework</h1>
+              <p class="lead">Reflection is a basic tool in java that allows you to view and interact with a classes architecture, for example getting all the annotations on a specific class. org.reflections effectively reverses this, e.g. by finding all classes with an annotation, not the other way around. Guice uses reflection to combine the concept of dependency injection with annotations released in JSR-330, allowing you to get an instance of an object with a simple annotation. RPF utilizes these two amazing tools, and many more, to create an easy-to-use and simple development environment for developers of any project type.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-sm-12 col-md-10">
+          <div id="portfolio">
+            <div class="item" data-toggle="modal" data-target="#guice">
+              <div class="img-overlay">
+                <span class="helper"></span>
+                <img src="includes/img/guice.png">
+              </div>
+              <p>Guice</p>
+            </div>
+            <div class="item" data-toggle="modal" data-target="#reflections">
+              <div class="img-overlay">
+                <span class="helper"></span>
+                <img src="includes/img/reflections.png">
+              </div>
+              <p>org.reflections</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-sm-12 col-md-8">
+          <div class="jumbotron jumbotron-fluid jumbotron-custom">
+            <div class="container">
+              <h1>Get Started</h1>
+              <p class="lead">RPF has extensive documentation available on the <a href="https://github.com/PiggyPiglet/Framework/wiki">Wiki</a>, and of course there's the <a href="https://rpf.piggypiglet.me/docs">javadocs</a>. Getting started is as simple as adding the repository and dependency to your build tool of choice, or if you're old fashioned, you can find binaries on <a href="https://ci.piggypiglet.me/job/Framework">jenkins</a>.</p>
+              <p>Gradle:</p>
+              <pre><code class="groovy">
+repositories {
+  mavenCentral()
+  maven {
+    url = "https://repo.piggypiglet.me/repository/maven-releases/"
+  }
+}
+              </code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-sm-12 col-md-8">
+          <div class="jumbotron jumbotron-fluid jumbotron-custom">
+            <div class="container">
+              <h1>Features</h1>
+              <ul>
+                <li>Child injector based startup system</li>
+                <li>Platform independent command API</li>
+                <li>Task manager</li>
+                <li>Manager API (including levenshtein searching)</li>
+                <li>Configuration system (JSON default)</li>
+                <li>File manager</li>
+                <li>Plenty of addons</li>
+                <ul>
+                  <li>MySQL API</li>
+                  <li>Logback implementation</li>
+                  <li>HotswapAgent support (WIP)</li>
+                  <li>Serve HTTP JSON</li>
+                  <li>Console interaction</li>
+                  <li>Runtime Jar Loader (WIP)</li>
+                </ul>
+                <li>Loads of pre-made bindings for popular apis</li>
+                <ul>
+                  <li>Bukkit</li>
+                  <li>Sponge</li>
+                  <li>JDA</li>
+                  <li>Velocity</li>
+                  <li>BungeeCord</li>
+                  <li>Nukkit (Soon)</li>
+                </ul>
+                <li>More to come</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <img src="includes/img/favicon.png">
+        </div>
+        <div class="col-sm-12 col-md-10 footer-custom">
+          <h2>Under Construction</h2>
+          <p>This website is currently under construction.</p>
+          <p>Art by <a href="https://funnycube.net">funnycube</a>.</p>
+        </div>
+      </div>  
+    </div>
+  </footer>
+  <div class="modal fade" id="guice" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Guice</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Guice is an advanced dependency injection library, allowing you to get an instance of a class as simply as:
+          <pre><code class="java">@Inject private ClassToInject instance;</code></pre>
+          At the core, this is the feature you'll use most, but guice is also immensely configurable, you can:
+          <ul>
+            <li>Bind implementations to interfaces</li>
+            <li>Define default implementations for interfaces</li>
+            <li>Bind separate instances to the same class with binding annotations</li>
+            <li>Request static injections</li>
+          </ul>
+          Guice provides more features, but these are the most useful ones in my opinion, and the ones RPF provides wrappers for. Typically, you'd have one module with some hardcoded bindings, which usually isn't very elegant. Let's put this into perspective, you have 3 classes, your main, your server connector, and your server data grabber. You want your connector to be binded to ServerConnector.class, and injectable into the server data grabber, but ServerConnector has injections of it's own from a third party lib. This is where child injectors/modules come into play, and without RPF this scenario can get extremely complex, especially when you have several components of your bootstrap system depending on each other, and other libraries.
+          <br/><br/>
+          RPF combats this situation with the StartupRegisterable system, allowing you to dynamically create modules during startup, without having to worry too much about the backing logic. The only thing you have to do, is ensure you tell RPF to register your registerables in the right order, RPF handles the rest. Going back to our previous example, with RPF, this would be easily achievable, by simply adding the binding for ServerConnector in the first registerable, then it'll be available for injection in the next registerable.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="reflections" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Reflections</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Reflections is what we call a classpath scanning library, and the easiest way to explain it is by saying, it's the opposite of reflection, regardless of the name. The Java reflection API can tell you about a classes architecture, and even lets you interact with it. For example, using Java's reflection API, you could find all annotations on a specific class. The opposite of that would be finding all classes with a specific annotation, and that's just one of the things org.reflections can do.
+          <br/><br/>
+          RPF uses this functionality to automatically register things that'd normally have to be done manually. E.g. command classes, event listeners, logger implementations, the list goes on. Bindings extend this functionality significantly, providing this auto register support for everything in your chosen API that'd have to be registered manually normally.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+  <script src="includes/js/main.js"></script>
+</body>
+</html>
