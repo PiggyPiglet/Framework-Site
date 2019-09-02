@@ -60,14 +60,14 @@
         <div class="col-md-1"></div>
         <div class="col-sm-12 col-md-10">
           <div id="portfolio">
-            <div class="item" data-toggle="modal" data-target="#guice">
+            <div id="guice-item" class="item" data-toggle="modal" data-target="#guice" data-toggle="tooltip" data-placement="top" title="Click for more info!">
               <div class="img-overlay">
                 <span class="helper"></span>
                 <img src="includes/img/guice.png">
               </div>
               <p>Guice</p>
             </div>
-            <div class="item" data-toggle="modal" data-target="#reflections">
+            <div id="reflections-item" class="item" data-toggle="modal" data-target="#reflections" data-toggle="tooltip" data-placement="top" title="Click for more info!">
               <div class="img-overlay">
                 <span class="helper"></span>
                 <img src="includes/img/reflections.png">
@@ -86,14 +86,20 @@
               <h1>Get Started</h1>
               <p class="lead">RPF has extensive documentation available on the <a href="https://github.com/PiggyPiglet/Framework/wiki">Wiki</a>, and of course there's the <a href="https://rpf.piggypiglet.me/docs">javadocs</a>. Getting started is as simple as adding the repository and dependency to your build tool of choice, or if you're old fashioned, you can find binaries on <a href="https://ci.piggypiglet.me/job/Framework">jenkins</a>.</p>
               <p>Gradle:</p>
-              <pre><code class="language-groovy">
-repositories {
+<pre><code class="language-groovy">repositories {
   mavenCentral()
   maven {
     url = "https://repo.piggypiglet.me/repository/maven-releases/"
   }
-}
-              </code></pre>
+}</code></pre>
+            <p>Maven:</p>
+<pre><code class="language-xml">&lt;repositories&gt;
+  &lt;repository&gt;
+    &lt;id&gt;piggypiglet&lt;/id&gt;
+    &lt;name&gt;piggypiglet&lt;/name&gt;
+    &lt;url&gt;https://repo.piggypiglet.me/repository/maven-releases/&lt;/url&gt;
+  &lt;/repository&gt;
+&lt;/repositories&gt;</code></pre>
             </div>
           </div>
         </div>
@@ -205,6 +211,11 @@ repositories {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <script src="includes/js/prism.js"></script>
-  <!-- <script src="includes/js/main.js"></script> -->
+  <script type="text/javascript">
+    $(function () {
+      $('#guice-item').tooltip()
+      $('#reflections-item').tooltip()
+    })
+  </script>
 </body>
 </html>

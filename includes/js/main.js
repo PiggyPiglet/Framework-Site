@@ -1,1 +1,3 @@
-hljs.initHighlightingOnLoad();
+$(function () {
+	$('[data-toggle="tooltip"]').tooltip()
+})
