@@ -13,15 +13,15 @@
   <meta property="og:url" content="https://piggypiglet.me">
   <meta property="og:image" content="https://piggypiglet.me/includes/img/favicon.png">
   <meta property="og:description" content="PiggyPiglet">
-  <link rel="icon" href="includes/img/favicon.png">
+  <link rel="icon" href="includes/img/RPF.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="includes/css/code-theme.css">
+  <link rel="stylesheet" href="includes/css/prism.css">
   <link rel="stylesheet" href="includes/css/main.css">
 </head>
 <body>
   <div class="wrapper">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
-      <a href="#" class="navbar-brand"><img src="includes/img/favicon.png" width="50" height="50"></a>
+      <a href="#" class="navbar-brand"><img src="includes/img/RPF.png" width="100" height="56"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -86,7 +86,7 @@
               <h1>Get Started</h1>
               <p class="lead">RPF has extensive documentation available on the <a href="https://github.com/PiggyPiglet/Framework/wiki">Wiki</a>, and of course there's the <a href="https://rpf.piggypiglet.me/docs">javadocs</a>. Getting started is as simple as adding the repository and dependency to your build tool of choice, or if you're old fashioned, you can find binaries on <a href="https://ci.piggypiglet.me/job/Framework">jenkins</a>.</p>
               <p>Gradle:</p>
-              <pre><code class="groovy">
+              <pre><code class="language-groovy">
 repositories {
   mavenCentral()
   maven {
@@ -142,7 +142,7 @@ repositories {
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2">
-          <img src="includes/img/favicon.png">
+          <img src="includes/img/RPF.png">
         </div>
         <div class="col-sm-12 col-md-10 footer-custom">
           <h2>Under Construction</h2>
@@ -163,7 +163,7 @@ repositories {
         </div>
         <div class="modal-body">
           Guice is an advanced dependency injection library, allowing you to get an instance of a class as simply as:
-          <pre><code class="java">@Inject private ClassToInject instance;</code></pre>
+          <pre><code class="language-java">@Inject private ClassToInject instance;</code></pre>
           At the core, this is the feature you'll use most, but guice is also immensely configurable, you can:
           <ul>
             <li>Bind implementations to interfaces</li>
@@ -204,7 +204,7 @@ repositories {
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-  <script src="includes/js/main.js"></script>
+  <script src="includes/js/prism.js"></script>
+  <!-- <script src="includes/js/main.js"></script> -->
 </body>
 </html>
