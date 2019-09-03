@@ -11,9 +11,9 @@
   <meta property="og:title" content="Reflection Project Framework">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rpf.piggypiglet.me">
-  <meta property="og:image" content="https://rpf.piggypiglet.me/includes/img/RPF.png">
+  <meta property="og:image" content="https://rpf.piggypiglet.me/includes/img/logo.png">
   <meta property="og:description" content="RPF is a java project framework that combines Guice and org.reflections for a unique experience.">
-  <link rel="icon" href="includes/img/RPF.png">
+  <link rel="icon" href="includes/img/logo.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="includes/css/prism.css">
   <link rel="stylesheet" href="includes/css/main.css">
@@ -21,7 +21,7 @@
 <body>
   <div class="wrapper">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
-      <a href="#" class="navbar-brand"><img src="includes/img/RPF.png" width="100" height="56"></a>
+      <a href="#" class="navbar-brand"><img src="includes/img/logo.png" width="100" height="56"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,13 +31,13 @@
             <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a href="https://piggypiglet.me/discord" class="nav-link">Discord</a>
+            <a target="_blank" href="https://piggypiglet.me/discord" class="nav-link">Discord</a>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" id="docs" role="button" data-toggle="dropdown">Docs</a>
             <div class="dropdown-menu">
-              <a href="https://github.com/PiggyPiglet/Framework/wiki" class="dropdown-item">Wiki</a>
-              <a href="https://rpf.piggypiglet.me/docs" class="dropdown-item">Javadocs</a>
+              <a target="_blank" href="https://github.com/PiggyPiglet/Framework/wiki" class="dropdown-item">Wiki</a>
+              <a target="_blank" href="https://rpf.piggypiglet.me/docs" class="dropdown-item">Javadocs</a>
             </div>
           </li>
         </ul>
@@ -84,13 +84,17 @@
           <div class="jumbotron jumbotron-fluid jumbotron-custom">
             <div class="container">
               <h1>Get Started</h1>
-              <p class="lead">RPF has extensive documentation available on the <a href="https://github.com/PiggyPiglet/Framework/wiki">Wiki</a>, and of course there's the <a href="https://rpf.piggypiglet.me/docs">javadocs</a>. Getting started is as simple as adding the repository and dependency to your build tool of choice, or if you're old fashioned, you can find binaries on <a href="https://ci.piggypiglet.me/job/Framework">jenkins</a>.</p>
+              <p class="lead">RPF has extensive documentation available on the <a href="https://github.com/PiggyPiglet/Framework/wiki">wiki</a>, and of course there's the <a href="https://rpf.piggypiglet.me/docs">javadocs</a>. Getting started is as simple as adding the repository and dependency to your build tool of choice, or if you're old fashioned, you can find binaries on <a href="https://ci.piggypiglet.me/job/Framework">jenkins</a>.</p>
               <p>Gradle:</p>
 <pre><code class="language-groovy">repositories {
   mavenCentral()
   maven {
     url = "https://repo.piggypiglet.me/repository/maven-releases/"
   }
+}
+
+dependencies {
+  compile "me.piggypiglet:framework-core:+"
 }</code></pre>
             <p>Maven:</p>
 <pre><code class="language-xml">&lt;repositories&gt;
@@ -99,7 +103,15 @@
     &lt;name&gt;piggypiglet&lt;/name&gt;
     &lt;url&gt;https://repo.piggypiglet.me/repository/maven-releases/&lt;/url&gt;
   &lt;/repository&gt;
-&lt;/repositories&gt;</code></pre>
+&lt;/repositories&gt;
+
+&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;me.piggypiglet&lt;/groupId&gt;
+    &lt;artifactId&gt;framework-core&lt;/artifactId&gt;
+    &lt;version&gt;LATEST&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre>
             </div>
           </div>
         </div>
@@ -111,33 +123,17 @@
           <div class="jumbotron jumbotron-fluid jumbotron-custom">
             <div class="container">
               <h1>Features</h1>
-              <ul>
-                <li>Child injector based startup system</li>
-                <li>Platform independent command API</li>
-                <li>Task manager</li>
-                <li>Manager API (including levenshtein searching)</li>
-                <li>Configuration system (JSON default)</li>
-                <li>File manager</li>
-                <li>Plenty of addons</li>
-                <ul>
-                  <li>MySQL API</li>
-                  <li>Logback implementation</li>
-                  <li>HotswapAgent support (WIP)</li>
-                  <li>Serve HTTP JSON</li>
-                  <li>Console interaction</li>
-                  <li>Runtime Jar Loader (WIP)</li>
-                </ul>
-                <li>Loads of pre-made bindings for popular apis</li>
-                <ul>
-                  <li>Bukkit</li>
-                  <li>Sponge</li>
-                  <li>JDA</li>
-                  <li>Velocity</li>
-                  <li>BungeeCord</li>
-                  <li>Nukkit (Soon)</li>
-                </ul>
-                <li>More to come</li>
-              </ul>
+              <div class="row">
+                <div class="col-sm-12 col-md-6" style="padding-left: 0">
+                  <p class="lead">By far the most important feature of RPF, is it's registerable system, a flow chart of which can be seen on the right, or under if you're on a small screen.</p>
+                  <p class="lead">To put it in words, the startup registerable system allows you to make guice bindings, and them immediately depend on them in the next registerables. A more in depth explanation with examples can be seen by clicking on the <a href="#guice-item">guice logo</a>.</p>
+                  <p class="lead">Another major selling point of RPF is it's automatic org.reflections integration for major components, such as commands, file types, loggers, and anything else that would normally have to be manually registered. Bindings also extend this functionality significantly. In layman's terms, normally when you create a new class, you'd have to reference it somewhere, so your application actually knows to execute it. Not with RPF, with the power of org.reflections' classpath scanning, the framework automatically registers anything you'd typically be doing manually. With exception to registerables of course, as they usually require a specific startup order. More info on this can be found by clicking on the <a href="#reflections-item">reflections logo</a>.</p>
+                  <p class="hint"><i>A full feature list can be found <a target="_blank" href="https://github.com/PiggyPiglet/Framework#features">here</a>.</i></p>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <img src="includes/img/flow.svg">
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -148,12 +144,12 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-2">
-          <img src="includes/img/RPF.png">
+          <img src="includes/img/logo.png">
         </div>
         <div class="col-sm-12 col-md-10 footer-custom">
-          <h2>Under Construction</h2>
-          <p>This website is currently under construction.</p>
-          <p>Art by <a href="https://funnycube.net">funnycube</a>.</p>
+          <h2>Reflection Project Framework</h2>
+          <p>Website by <a href="https://piggypiglet.me">PiggyPiglet</a>.</p>
+          <p>Guice & RPF logo by <a href="https://funnycube.net">funnycube</a>.</p>
         </div>
       </div>  
     </div>
